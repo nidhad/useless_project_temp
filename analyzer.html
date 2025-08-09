@@ -5,23 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CuSA - Analyze Your Cutlet</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <div class="bg-blobs">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+    </div>
+
     <div class="analyzer-container">
-        <h1>🍗 Cutlet Symmetry Analyzer</h1>
-        
-        <!-- Upload Cutlet Image -->
-        <div class="upload-box">
-            <input type="file" id="cutlet-upload" accept="image/*">
-            <label for="cutlet-upload">Choose a Cutlet Image</label>
-            <img id="cutlet-preview" src="" alt="Your cutlet">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-chevron-left"></i> Back to Home
+        </a>
+
+        <div class="analyzer-header">
+            <h1><span class="gradient-text">Cutlet</span> Analysis</h1>
+            <p>Upload your cutlet to discover its true beauty</p>
         </div>
 
-        <!-- Results -->
-        <div class="results">
-            <h2>Your Cutlet's Score</h2>
-            <div id="symmetry-score">-</div>
-            <p id="feedback-text">Upload a cutlet to begin!</p>
+        <!-- UPLOAD ZONE -->
+        <div class="upload-zone glass-card" id="uploadZone">
+            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+            <p>Drag & drop your cutlet image here</p>
+            <span>or</span>
+            <label for="cutlet-upload" class="browse-button">
+                Browse Files
+            </label>
+            <input type="file" id="cutlet-upload" accept="image/*">
+        </div>
+
+        <!-- RESULTS CONTAINER (initially hidden) -->
+        <div class="results-container glass-card" id="resultsContainer" style="display: none;">
+            <div class="image-preview-container">
+                <img id="cutlet-preview" src="" alt="Your cutlet">
+            </div>
+
+            <div class="analysis-results">
+                <h2>Your Cutlet's <span class="gradient-text">Verdict</span></h2>
+                
+                <div class="score-circle">
+                    <div class="circle-progress">
+                        <svg width="120" height="120">
+                            <circle class="progress-ring-bg" cx="60" cy="60" r="50" stroke="#eee" stroke-width="8" fill="none"/>
+                            <circle class="progress-ring" cx="60" cy="60" r="50" stroke="#ff6b6b" stroke-width="8" fill="none"
+                                    stroke-dasharray="314" stroke-dashoffset="314"/>
+                        </svg>
+                        <div class="score-value" id="symmetry-score">0.0</div>
+                    </div>
+                    <p>Symmetry Score</p>
+                </div>
+
+                <div class="feedback-box">
+                    <div class="feedback-header">
+                        <i class="fas fa-quote-left"></i>
+                        <h3>Expert Opinion</h3>
+                    </div>
+                    <p id="feedback-text">Waiting for your cutlet...</p>
+                </div>
+            </div>
         </div>
     </div>
 
