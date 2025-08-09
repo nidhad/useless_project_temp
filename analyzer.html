@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuSA - Analyze Your Cutlet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="analyzer-container">
+        <h1>🍗 Cutlet Symmetry Analyzer</h1>
+        
+        <!-- Upload Cutlet Image -->
+        <div class="upload-box">
+            <input type="file" id="cutlet-upload" accept="image/*">
+            <label for="cutlet-upload">Choose a Cutlet Image</label>
+            <img id="cutlet-preview" src="" alt="Your cutlet">
+        </div>
+
+        <!-- Results -->
+        <div class="results">
+            <h2>Your Cutlet's Score</h2>
+            <div id="symmetry-score">-</div>
+            <p id="feedback-text">Upload a cutlet to begin!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
